@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink } from 'lucide-react';
 
 // Import the image from the 'src/images' folder
-import lumosScreenshot from '/public/images/lumoslearning.png'; // Replace with your actual image path
+import lumosScreenshot from '/images/lumoslearning.png'; // Replace with your actual image path
 
 const projects = [
   {

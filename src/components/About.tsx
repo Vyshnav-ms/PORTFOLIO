@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const skills = [
-  'React', 'TypeScript', 'Node.js', 'Python', 'Django', 'Tailwind CSS'
-];
+const skills = ['React', 'TypeScript', 'Node.js', 'Python', 'Django', 'Tailwind CSS'];
+const hero = '/images/vysh3.jpg'; // Reference the file from the public folder
+
+const resumePath = '/resume/Vyshnav_MS_Resume_2024.pdf'; // Ensure this file exists in the public folder
 
 export default function About() {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   return (
     <section id="about" className="py-20 relative overflow-hidden">
+      {/* Animated Gradient Circle */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -21,26 +23,32 @@ export default function About() {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "linear"
+          ease: 'linear',
         }}
         className="absolute top-1/4 -right-32 w-64 h-64 bg-purple-500 rounded-full filter blur-[128px] opacity-20"
       />
-      
+
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 sm:grid-cols-1 gap-12 items-center"
         >
+          {/* About Me Section */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold gradient-text">About Me</h2>
             <p className="text-gray-400 leading-relaxed">
-              I'm a passionate Full-Stack Developer currently pursuing an MCA at LEAD College of Management.
-              I have experience building responsive, user-friendly web interfaces and working with modern technologies like Python, React, and Django. With a strong foundation in both frontend and backend development, I bring a creative and solution-oriented approach to every project.
-              I'm eager to learn, grow, and contribute to creating exceptional digital experiences.
+              I'm a passionate Full-Stack Developer currently pursuing an MCA at LEAD College of
+              Management. I have experience building responsive, user-friendly web interfaces and
+              working with modern technologies like Python, React, and Django. With a strong
+              foundation in both frontend and backend development, I bring a creative and
+              solution-oriented approach to every project. I'm eager to learn, grow, and contribute
+              to creating exceptional digital experiences.
             </p>
+
+            {/* Skills Section */}
             <div>
               <h3 className="text-2xl font-semibold text-white mb-4">Skills</h3>
               <div className="flex flex-wrap gap-2">
@@ -61,8 +69,8 @@ export default function About() {
             {/* Hire Me Button */}
             <div className="mt-8">
               <a
-                href="/public/resume/Vyshnav_MS_Resume_2024.pdf" // Replace with the path to your CV file
-                download
+                href={resumePath} // Dynamically references the resume path
+                download="Vyshnav_MS_Resume_2024.pdf" // Specifies the download file name
                 className="inline-block px-6 py-3 text-white bg-cyan-500 hover:bg-cyan-400 rounded-lg transition-colors"
               >
                 Hire Me
@@ -70,6 +78,7 @@ export default function About() {
             </div>
           </div>
 
+          {/* Hero Image Section */}
           <div className="relative group">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -78,8 +87,8 @@ export default function About() {
               className="relative z-10"
             >
               <img
-                src="/public/images/vysh3.png"
-                alt="Profile"
+                src={hero}
+                alt="Vyshnav's Profile Picture"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-500 opacity-20 group-hover:opacity-30 transition-opacity"></div>
