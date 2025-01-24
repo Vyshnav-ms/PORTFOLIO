@@ -61,7 +61,7 @@ export default function About() {
             {/* Hire Me Button */}
             <div className="mt-8">
               <a
-                href="src\resume\Vyshnav_MS_Resume_2024.pdf" // Replace with the path to your CV file
+                href="/public/resume/Vyshnav_MS_Resume_2024.pdf" // Replace with the path to your CV file
                 download
                 className="inline-block px-6 py-3 text-white bg-cyan-500 hover:bg-cyan-400 rounded-lg transition-colors"
               >
@@ -78,7 +78,7 @@ export default function About() {
               className="relative z-10"
             >
               <img
-                src="src\images\vysh3.jpg"
+                src="/public/images/vysh3.png"
                 alt="Profile"
                 className="rounded-2xl shadow-2xl"
               />
